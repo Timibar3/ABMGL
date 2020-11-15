@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Esto es un Home</h1>
+    <a href="/products/crear">Crear Producto</a>
+
+   <ol>
+        <% productos.forEach(function(prod){%>
+            <li>
+                Producto: <%= prod.nombre %>
+                Precio: <%= prod.precio %>
+                <a href="/products/edit/<%=prod.id %>">Editar Producto</a>
+                <a href="/products/delete/<%= prod.id %>">Eliminar Producto</a>
+            </li>
+        <% }); %>
+    </ol>
+    
+</body>
+</html>
